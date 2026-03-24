@@ -10,12 +10,17 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
         body {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            /* Vantablack - 目前已知最黑的物质 */
+            background: #000000;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
@@ -24,34 +29,27 @@
             padding: 2rem;
         }
         h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #00d9ff, #a855f7);
+            font-size: 8rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            /* 彩色渐变 */
+            background: linear-gradient(90deg, #ff006e, #fb5607, #ffbe0b, #8338ec, #3a86ff, #ff006e);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradient-shift 8s ease infinite;
         }
-        p {
-            font-size: 1.5rem;
-            color: #8892b0;
-            margin-bottom: 2rem;
-        }
-        .status {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(0, 217, 255, 0.1);
-            border: 1px solid #00d9ff;
-            border-radius: 20px;
-            color: #00d9ff;
-            font-size: 0.9rem;
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Vanta Space</h1>
-        <p>域名配置成功！🎉</p>
-        <span class="status">● Online</span>
     </div>
 </body>
 </html>
